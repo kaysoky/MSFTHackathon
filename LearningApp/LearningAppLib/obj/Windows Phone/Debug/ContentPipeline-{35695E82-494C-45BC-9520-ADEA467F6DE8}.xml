@@ -9,9 +9,9 @@
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
       <RootDirectory>c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLibContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\bin\Windows Phone\Debug\Content\</OutputDirectory>
+      <LoggerRootDirectory>C:\Users\Hoagies\Documents\Visual Studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Hoagies\Documents\Visual Studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Hoagies\Documents\Visual Studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\bin\Windows Phone\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

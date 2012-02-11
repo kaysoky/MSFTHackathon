@@ -36,3 +36,5 @@ c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\L
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\ko\System.Windows.Interactivity.resources.dll
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningAppLib.dll
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningAppLib.pdb

@@ -85,6 +85,7 @@
     <ProjectReference Include="..\LearningAppLibContent\LearningAppLibContent.contentproj">
       <Name>LearningAppLibContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

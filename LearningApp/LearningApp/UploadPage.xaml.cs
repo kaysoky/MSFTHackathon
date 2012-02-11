@@ -15,9 +15,17 @@ namespace LearningApp
 {
     public partial class UploadPage : PhoneApplicationPage
     {
+        public static byte[] HiddenData;
+
         public UploadPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            
+            base.OnBackKeyPress(e);
         }
     }
 }

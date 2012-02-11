@@ -36,6 +36,7 @@ c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\L
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\ko\System.Windows.Interactivity.resources.dll
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+<<<<<<< HEAD
 C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningApp\Bin\Debug\ApplicationIcon.png
 C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningApp\Bin\Debug\Background.png
 C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningApp\Bin\Debug\LearningApp.dll
@@ -74,3 +75,7 @@ C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningApp\obj\Debug\GamePage
 C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningApp\obj\Debug\MainPage.g.i.cs
 C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningApp\obj\Debug\SendPage.g.i.cs
 C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningApp\obj\Debug\UploadPage.g.i.cs
+=======
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningAppLib.dll
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningAppLib.pdb
+>>>>>>> 025f5b12162cdfa11149bf8bd14a8c4fb75fd3c5

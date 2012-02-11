@@ -7,7 +7,6 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -23,9 +22,12 @@ namespace LearningApp
         private ContentManager contentManager;
         private GameTimer timer;
         private SpriteBatch spriteBatch;
-        private SpriteFont kootenay;
 
+        private Texture2D BlankWhiteTexture;
+        private SpriteFont Kootenay;
         private List<ImageFile> loadedPictures = new List<ImageFile>();
+
+        public static byte[] ImageData;
 
         public GamePage()
         {
@@ -33,8 +35,6 @@ namespace LearningApp
 
             // Get the content manager from the application
             contentManager = (Application.Current as App).Content;
-
-            //kootenay = contentManager.Load<SpriteFont>("Kootenay");
 
             // Create a timer for this page
             timer = new GameTimer();
@@ -66,11 +66,10 @@ namespace LearningApp
                     loadedPictures.Add(displayData);
                 }
                 loadedPictures.AddRange(loadedPictures);
-                loadedPictures.AddRange(loadedPictures);
             }
             catch (Exception accessDenied)
             {
-                
+                //Dunno how to write text to phone
             }
         }
 
@@ -83,6 +82,9 @@ namespace LearningApp
             spriteBatch = new SpriteBatch(SharedGraphicsDeviceManager.Current.GraphicsDevice);
 
             // TODO: use this.content to load your game content here
+            Kootenay = this.contentManager.Load<SpriteFont>("Kootenay");
+            BlankWhiteTexture = new Texture2D(SharedGraphicsDeviceManager.Current.GraphicsDevice, 1, 1);
+            BlankWhiteTexture.SetData<Color>( new Color[] { Color.White } );
 
             // Start the timer
             timer.Start();
@@ -95,66 +97,66 @@ namespace LearningApp
             // Stop the timer
             timer.Stop();
 
+            //Save the image's data to a shared static variable
+            ImageData = new byte[loadedPictures[selectedImage].Picture.Width * loadedPictures[selectedImage].Picture.Height];
+            loadedPictures[selectedImage].Picture.GetData<byte>(ImageData, 0, ImageData.Length);
+
             // Set the sharing mode of the graphics device to turn off XNA rendering
             SharedGraphicsDeviceManager.Current.GraphicsDevice.SetSharingMode(false);
 
             base.OnNavigatedFrom(e);
         }
 
+        const int Default_Margin = 5;
+        private int heightOffset = Default_Margin;
+        private int numPicturePerRow = 2;
+        private int bottomHeightBound = 2 * Default_Margin;
+        private int selectedImage = -1;
         /// <summary>
         /// Allows the page to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         private void OnUpdate(object sender, GameTimerEventArgs e)
         {
-            // TODO: Add your update logic here
+            //Enable dragging of the screen
             TouchPanel.EnabledGestures = GestureType.VerticalDrag;
             if (TouchPanel.IsGestureAvailable)
             {
                 GestureSample action = TouchPanel.ReadGesture();
-                switch (action.GestureType)
+                heightOffset += (int)(action.Delta - action.Delta2).Y;
+                if (heightOffset < -bottomHeightBound)
                 {
-                    case GestureType.DoubleTap:
-                        break;
-                    case GestureType.DragComplete:
-                        break;
-                    case GestureType.Flick:
-                        break;
-                    case GestureType.FreeDrag:
-                        break;
-                    case GestureType.Hold:
-                        break;
-                    case GestureType.HorizontalDrag:
-                        break;
-                    case GestureType.None:
-                        break;
-                    case GestureType.Pinch:
-                        break;
-                    case GestureType.PinchComplete:
-                        break;
-                    case GestureType.Tap:
-                        break;
-                    case GestureType.VerticalDrag:
-                        heightOffset += (int)(action.Delta - action.Delta2).Y;
-                        //if (heightOffset > Default_Margin)
-                        //{
-                        //    heightOffset = Default_Margin;
-                        //}
-                        //else if (-heightOffset < bottomHeightBound)
-                        //{
-                        //    heightOffset = -bottomHeightBound;
-                        //}
-                        break;
-                    default:
-                        break;
+                    heightOffset = -bottomHeightBound;
+                }
+                if (heightOffset >= Default_Margin)
+                {
+                    heightOffset = Default_Margin;
+                }
+            }
+
+            //Enable selection of images
+            TouchPanel.EnabledGestures = GestureType.Tap;
+            if (TouchPanel.IsGestureAvailable)
+            {
+                GestureSample action = TouchPanel.ReadGesture();
+                Microsoft.Xna.Framework.Point tap = new Microsoft.Xna.Framework.Point((int)action.Position.X, (int)action.Position.Y);
+                for (int i = 0; i < loadedPictures.Count; i++)
+                {
+                    //Only check picture within the frame
+                    if (loadedPictures[i].DrawingRegion != null 
+                        && loadedPictures[i].DrawingRegion.Y + loadedPictures[i].DrawingRegion.Height > 0
+                        && loadedPictures[i].DrawingRegion.Y < SharedGraphicsDeviceManager.DefaultBackBufferHeight) 
+                    {
+                        if (loadedPictures[i].DrawingRegion.Contains(tap))
+                        {
+                            selectedImage = i;
+                            break;
+                        }
+                    }
                 }
             }
         }
 
-        const int Default_Margin = 5;
-        private int heightOffset = Default_Margin;
-        private int numPicturePerRow = 2;
-        private int bottomHeightBound = 2 * Default_Margin;
         /// <summary>
         /// Allows the page to draw itself.
         /// </summary>
@@ -175,11 +177,13 @@ namespace LearningApp
             {
                 //Stack all pictures in rows and columns
                 int drawHeight = (int)((double)drawWidth / loadedPictures[i].Width * loadedPictures[i].Height);
-                spriteBatch.Draw(loadedPictures[i].Picture
-                    , new Microsoft.Xna.Framework.Rectangle(Default_Margin * (currentRowNum + 1) + currentRowNum * drawWidth
+                loadedPictures[i].DrawingRegion = 
+                    new Rectangle(Default_Margin * (currentRowNum + 1) + currentRowNum * drawWidth
                         , currentHeightOffset
                         , drawWidth
-                        , drawHeight)
+                        , drawHeight);
+                spriteBatch.Draw(loadedPictures[i].Picture
+                    , loadedPictures[i].DrawingRegion
                     , Color.White);
 
                 //Keep track of rows
@@ -196,17 +200,24 @@ namespace LearningApp
                     largestDrawHeight = 0;
                 }
             }
-            bottomHeightBound = currentHeightOffset;
+            //Determine how large the stack of images is
+            currentHeightOffset += largestDrawHeight;  //Make sure that the last row is accounted for
+            bottomHeightBound = currentHeightOffset - heightOffset - SharedGraphicsDeviceManager.DefaultBackBufferHeight;
 
-            spriteBatch.DrawString(kootenay, "Debug:/n" + heightOffset, Vector2.Zero, Color.White);
+            //Highlight the selected image
+            if (selectedImage >= 0)
+            {
+                spriteBatch.Draw(BlankWhiteTexture, loadedPictures[selectedImage].DrawingRegion, new Color(1.0f, 1.0f, 1.0f, 0.2f));
+            }
             spriteBatch.End();
         }
     }
 
-    struct ImageFile
+    class ImageFile
     {
         public Texture2D Picture;
         public int Width;
         public int Height;
+        public Rectangle DrawingRegion;
     }
 }

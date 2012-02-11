@@ -28,10 +28,10 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,8,12,-8">
             
             <!--Create a single button to navigate to the second page which is rendered with the XNA Framework-->
-            <Button Height="112" Content="Get Medium (XNA)" Click="Button_Click" VerticalAlignment="Top" />
+            <Button Height="112" Content="Get Medium (XNA)" Click="medium" VerticalAlignment="Top" />
             <Button Content="Get Data" Margin="0,112,0,0" Height="121" VerticalAlignment="Top">
             	<i:Interaction.Triggers>
             		<i:EventTrigger EventName="Click">
@@ -39,21 +39,19 @@
             		</i:EventTrigger>
             	</i:Interaction.Triggers>
             </Button>
-            <Button Content="Encode &amp; Send ?" Margin="0,237,0,290"/>
+            <Button Content="Encode &amp; Send" Click="encode" Margin="0,237,0,297" d:LayoutOverrides="VerticalAlignment"/>
             
         </Grid>
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
+ <!--   <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
+            
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Share and Save"/>
+            
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
-
+ 
+    </phone:PhoneApplicationPage.ApplicationBar>
+-->
 </phone:PhoneApplicationPage>

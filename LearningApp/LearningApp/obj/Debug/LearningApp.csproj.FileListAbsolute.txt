@@ -1,0 +1,16 @@
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\ApplicationIcon.png
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\Background.png
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningApp.dll
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningApp.pdb
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\AppManifest.xaml
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningApp.xap
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningAppLib.dll
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningAppLib.pdb
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\obj\Debug\ResolveAssemblyReference.cache
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\obj\Debug\App.g.i.cs
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\obj\Debug\GamePage.g.i.cs
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\obj\Debug\MainPage.g.i.cs
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\obj\Debug\LearningApp.g.resources
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\obj\Debug\LearningApp.dll
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\obj\Debug\LearningApp.pdb
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\obj\Debug\XapCacheFile.xml

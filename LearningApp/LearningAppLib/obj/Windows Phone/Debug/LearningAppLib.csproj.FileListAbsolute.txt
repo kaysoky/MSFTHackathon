@@ -1,0 +1,6 @@
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\bin\Windows Phone\Debug\LearningAppLib.dll
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\bin\Windows Phone\Debug\LearningAppLib.pdb
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\LearningAppLib.dll
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\LearningAppLib.pdb

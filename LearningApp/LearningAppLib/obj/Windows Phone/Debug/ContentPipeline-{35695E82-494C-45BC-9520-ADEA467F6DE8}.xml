@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{35695E82-494C-45BC-9520-ADEA467F6DE8}</ContentProjectGUID>
+      <TargetPlatform>WindowsPhone</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLibContent\</RootDirectory>
+      <LoggerRootDirectory>c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\</LoggerRootDirectory>
+      <IntermediateDirectory>c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\</IntermediateDirectory>
+      <OutputDirectory>c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\bin\Windows Phone\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-02-07T20:39:09.5757441-08:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

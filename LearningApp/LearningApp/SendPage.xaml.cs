@@ -27,9 +27,9 @@ namespace LearningApp
             {
                 MediaSource librarySource = MediaSource.GetAvailableMediaSources().First<MediaSource>();
                 MediaLibrary gallery = new MediaLibrary(librarySource);
-                gallery.SavePicture("", GamePage.ImageData);
+                gallery.SavePicture("title", GamePage.ImageData);
             }
-            catch (Exception)
+            catch (Exception e1)
             {
                 ExceptionCallout.Content = "Save failed...\nPlease try again";
                 FadeIn.Begin();

@@ -78,8 +78,7 @@ namespace LearningApp
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(SharedGraphicsDeviceManager.Current.GraphicsDevice);
 
-            // TODO: use this.content to load your game content here
-            Kootenay = this.contentManager.Load<SpriteFont>("Kootenay");
+            Kootenay = contentManager.Load<SpriteFont>("Kootenay");
             BlankWhiteTexture = new Texture2D(SharedGraphicsDeviceManager.Current.GraphicsDevice, 1, 1);
             BlankWhiteTexture.SetData<Color>( new Color[] { Color.White } );
 
@@ -95,7 +94,7 @@ namespace LearningApp
             timer.Stop();
 
             //Save the image's data to a shared static variable
-            ImageData = new byte[loadedPictures[selectedImage].Picture.Width * loadedPictures[selectedImage].Picture.Height];
+            ImageData = new byte[4*loadedPictures[selectedImage].Picture.Width * loadedPictures[selectedImage].Picture.Height];
             loadedPictures[selectedImage].Picture.GetData<byte>(ImageData, 0, ImageData.Length);
 
             // Set the sharing mode of the graphics device to turn off XNA rendering
@@ -115,41 +114,41 @@ namespace LearningApp
         /// </summary>
         private void OnUpdate(object sender, GameTimerEventArgs e)
         {
-            //Enable dragging of the screen
-            TouchPanel.EnabledGestures = GestureType.VerticalDrag;
+            //Enable dragging of the screen and selection of images
+            TouchPanel.EnabledGestures = GestureType.VerticalDrag | GestureType.Tap;
             if (TouchPanel.IsGestureAvailable)
             {
                 GestureSample action = TouchPanel.ReadGesture();
-                heightOffset += (int)(action.Delta - action.Delta2).Y;
-                if (heightOffset < -bottomHeightBound)
+                switch (action.GestureType)
                 {
-                    heightOffset = -bottomHeightBound;
-                }
-                if (heightOffset >= Default_Margin)
-                {
-                    heightOffset = Default_Margin;
-                }
-            }
-
-            //Enable selection of images
-            TouchPanel.EnabledGestures = GestureType.Tap;
-            if (TouchPanel.IsGestureAvailable)
-            {
-                GestureSample action = TouchPanel.ReadGesture();
-                Microsoft.Xna.Framework.Point tap = new Microsoft.Xna.Framework.Point((int)action.Position.X, (int)action.Position.Y);
-                for (int i = 0; i < loadedPictures.Count; i++)
-                {
-                    //Only check picture within the frame
-                    if (loadedPictures[i].DrawingRegion != null 
-                        && loadedPictures[i].DrawingRegion.Y + loadedPictures[i].DrawingRegion.Height > 0
-                        && loadedPictures[i].DrawingRegion.Y < SharedGraphicsDeviceManager.DefaultBackBufferHeight) 
-                    {
-                        if (loadedPictures[i].DrawingRegion.Contains(tap))
+                    case GestureType.VerticalDrag:
+                        heightOffset += (int)(action.Delta - action.Delta2).Y;
+                        if (heightOffset < -bottomHeightBound)
                         {
-                            selectedImage = i;
-                            break;
+                            heightOffset = -bottomHeightBound;
                         }
-                    }
+                        if (heightOffset >= Default_Margin)
+                        {
+                            heightOffset = Default_Margin;
+                        }
+                        break;
+                    case GestureType.Tap:
+                        Microsoft.Xna.Framework.Point tap = new Microsoft.Xna.Framework.Point((int)action.Position.X, (int)action.Position.Y);
+                        for (int i = 0; i < loadedPictures.Count; i++)
+                        {
+                            //Only check picture within the frame
+                            if (loadedPictures[i].DrawingRegion != null
+                                && loadedPictures[i].DrawingRegion.Y + loadedPictures[i].DrawingRegion.Height > 0
+                                && loadedPictures[i].DrawingRegion.Y < SharedGraphicsDeviceManager.DefaultBackBufferHeight)
+                            {
+                                if (loadedPictures[i].DrawingRegion.Contains(tap))
+                                {
+                                    selectedImage = i;
+                                    break;
+                                }
+                            }
+                        }
+                        break;
                 }
             }
         }
@@ -204,7 +203,7 @@ namespace LearningApp
             //Highlight the selected image
             if (selectedImage >= 0)
             {
-                spriteBatch.Draw(BlankWhiteTexture, loadedPictures[selectedImage].DrawingRegion, new Color(1.0f, 1.0f, 1.0f, 0.2f));
+                spriteBatch.Draw(BlankWhiteTexture, loadedPictures[selectedImage].DrawingRegion, Color.White * 0.5f);
             }
             spriteBatch.End();
         }

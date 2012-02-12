@@ -13,14 +13,15 @@
 	Foreground="{StaticResource PhoneForegroundBrush}"
 	Orientation="Portrait"
 	shell:SystemTray.IsVisible="True">
-	<phone:PhoneApplicationPage.Resources>
+    <phone:PhoneApplicationPage.Resources>
 		<Storyboard x:Name="FadeIn">
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ExceptionCallout">
 				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
 				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
 					<EasingDoubleKeyFrame.EasingFunction>
 						<ExponentialEase EasingMode="EaseOut" Exponent="4"/>
-					</EasingDoubleKeyFrame.EasingFunction>
+	
+                    </EasingDoubleKeyFrame.EasingFunction>
 				</EasingDoubleKeyFrame>
 				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="1"/>
 				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="0">

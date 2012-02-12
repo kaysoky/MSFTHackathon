@@ -25,7 +25,7 @@ namespace LearningApp
 
         private Texture2D BlankWhiteTexture;
         private SpriteFont Kootenay;
-        private List<ImageFile> loadedPictures = new List<ImageFile>();
+        private List<ImageFile> loadedPictures;
 
         public static byte[] ImageData;
         public static int ImageWidth;
@@ -44,6 +44,7 @@ namespace LearningApp
             timer.Update += OnUpdate;
             timer.Draw += OnDraw;
 
+            loadedPictures = new List<ImageFile>();
             ThreadPool.QueueUserWorkItem(new WaitCallback(LoadMedia));
         }
 
@@ -80,8 +81,8 @@ namespace LearningApp
             spriteBatch = new SpriteBatch(SharedGraphicsDeviceManager.Current.GraphicsDevice);
 
             //Kootenay = contentManager.Load<SpriteFont>("Kootenay");
-            BlankWhiteTexture = new Texture2D(SharedGraphicsDeviceManager.Current.GraphicsDevice, 1, 1);
-            BlankWhiteTexture.SetData<Color>( new Color[] { Color.White } );
+            //BlankWhiteTexture = new Texture2D(SharedGraphicsDeviceManager.Current.GraphicsDevice, 1, 1);
+            //BlankWhiteTexture.SetData<Color>( new Color[] { Color.White } );
 
             // Start the timer
             timer.Start();
@@ -94,11 +95,14 @@ namespace LearningApp
             // Stop the timer
             timer.Stop();
 
-            //Save the image's data to a shared static variable
-            ImageData = new byte[4 * loadedPictures[selectedImage].Picture.Width * loadedPictures[selectedImage].Picture.Height];
-            loadedPictures[selectedImage].Picture.GetData<byte>(ImageData, 0, ImageData.Length);
-            ImageWidth = loadedPictures[selectedImage].Picture.Width;
-            ImageHeight = loadedPictures[selectedImage].Picture.Height;
+            if (selectedImage >= 0)
+            {
+                //Save the image's data to a shared static variable
+                ImageData = new byte[4 * loadedPictures[selectedImage].Picture.Width * loadedPictures[selectedImage].Picture.Height];
+                loadedPictures[selectedImage].Picture.GetData<byte>(ImageData, 0, ImageData.Length);
+                ImageWidth = loadedPictures[selectedImage].Picture.Width;
+                ImageHeight = loadedPictures[selectedImage].Picture.Height;
+            }
 
             // Set the sharing mode of the graphics device to turn off XNA rendering
             SharedGraphicsDeviceManager.Current.GraphicsDevice.SetSharingMode(false);
@@ -206,9 +210,9 @@ namespace LearningApp
             //Highlight the selected image
             if (selectedImage >= 0)
             {
-                spriteBatch.Draw(BlankWhiteTexture
-                    , loadedPictures[selectedImage].DrawingRegion
-                    , Color.White * 0.25f);
+                //spriteBatch.Draw(BlankWhiteTexture
+                //    , loadedPictures[selectedImage].DrawingRegion
+                //    , Color.White * 0.25f);
             }
             spriteBatch.End();
         }

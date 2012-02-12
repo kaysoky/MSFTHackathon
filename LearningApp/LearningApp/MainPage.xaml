@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+    xmlns:edc="clr-namespace:Microsoft.Expression.Controls;assembly=Microsoft.Expression.Drawing" 
     x:Class="LearningApp.MainPage"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -13,6 +14,24 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
+	<phone:PhoneApplicationPage.Resources>
+		<Storyboard x:Name="FadeIn">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MessageCallout">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<ExponentialEase EasingMode="EaseOut" Exponent="4"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<ExponentialEase EasingMode="EaseOut" Exponent="4"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -31,17 +50,26 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,8,12,-8">
 
             <!--Create a single button to navigate to the second page which is rendered with the XNA Framework-->
-            <Button Height="112" Content="Get Medium (XNA)" Click="medium" VerticalAlignment="Top" />
-            <Button Content="Get Data" Margin="0,112,0,0" Height="121" VerticalAlignment="Top">
+            <Button Height="67" Content="Get Medium" Click="medium" VerticalAlignment="Top" Margin="0,0,195,0" />
+            <Button Content="Get Data" Height="67" VerticalAlignment="Top" HorizontalAlignment="Right" Width="206">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <ec:NavigateToPageAction TargetPage="/UploadPage.xaml"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <Button Content="Encode &amp; Send" Click="encode" Margin="0,237,0,297" d:LayoutOverrides="VerticalAlignment"/>
+            <Button Content="Encode &amp; Send" Click="encode" Margin="0,67,0,467"/>
+            <Button Content="DECODE" Click="decode" Margin="0,162,0,0" Height="84" VerticalAlignment="Top"/>
 
         </Grid>
+    	<edc:Callout x:Name="MessageCallout" AnchorPoint="0.5,0.711" CalloutStyle="Oval" Content="" FontSize="24" Margin="8,248,12,8" Stroke="Black" Opacity="0" Grid.Row="1">
+    		<edc:Callout.Fill>
+    			<RadialGradientBrush>
+    				<GradientStop Color="#FF686AE9" Offset="0"/>
+    				<GradientStop Color="#FF141427" Offset="1"/>
+    			</RadialGradientBrush>
+    		</edc:Callout.Fill>
+    	</edc:Callout>
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->

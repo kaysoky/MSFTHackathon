@@ -29,9 +29,9 @@ namespace LearningApp
                 MediaLibrary gallery = new MediaLibrary(librarySource);
                 gallery.SavePicture("Title", GamePage.ImageData);
             }
-            catch (Exception)
+            catch (Exception error)
             {
-                ExceptionCallout.Content = "Save failed...\nPlease try again";
+                ExceptionCallout.Content = "Save failed...\nPlease try again\n" + error.Message;
                 FadeIn.Begin();
             }
         }

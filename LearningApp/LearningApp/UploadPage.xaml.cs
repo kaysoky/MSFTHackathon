@@ -15,7 +15,7 @@ namespace LearningApp
 {
     public partial class UploadPage : PhoneApplicationPage
     {
-        public static byte[] HiddenData;
+        public static byte[] HiddenData = new byte[0];
 
         //private TextBox ToBeHidden = new TextBox();
         public UploadPage()

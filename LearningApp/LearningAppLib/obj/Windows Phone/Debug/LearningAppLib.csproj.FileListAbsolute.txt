@@ -4,3 +4,10 @@ c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\L
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\LearningAppLib.dll
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\LearningAppLib.pdb
+C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\bin\Windows Phone\Debug\Content\Kootenay.xnb
+C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\bin\Windows Phone\Debug\LearningAppLib.dll
+C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\bin\Windows Phone\Debug\LearningAppLib.pdb
+C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\obj\Windows Phone\Debug\LearningAppLib.dll
+C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\obj\Windows Phone\Debug\LearningAppLib.pdb

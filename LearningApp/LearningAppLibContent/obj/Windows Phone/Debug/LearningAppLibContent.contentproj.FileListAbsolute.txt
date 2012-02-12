@@ -1,1 +1,2 @@
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLibContent\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLibContent\obj\Windows Phone\Debug\ResolveAssemblyReference.cache

@@ -11,6 +11,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 
+using Microsoft.Xna.Framework.Media;
+using System.Windows.Media.Imaging;
+
 namespace LearningApp
 {
     public partial class UploadPage : PhoneApplicationPage
@@ -22,6 +25,18 @@ namespace LearningApp
             InitializeComponent();
         }
 
+        private void navToPictures(object Sender, RoutedEventArgs)
+        {
+            MediaLibrary ml = new MediaLibrary();
+
+            if (ml.Pictures.Count > 0)
+            {
+                System.IO.Stream sm = ml.Pictures[0].GetImage();
+                BitmapImage bmp = new BitmapImage();
+                bmp.SetSource(sm);
+                imagecontrol.Source = bmp;
+            }            
+        }
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
             

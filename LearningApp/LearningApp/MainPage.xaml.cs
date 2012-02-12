@@ -22,9 +22,14 @@ namespace LearningApp
         }
 
         // Simple button Click event handler to take us to the second page
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void medium(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/GamePage.xaml", UriKind.Relative));
         }
+        private void encode(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SendPage.xaml", UriKind.Relative));
+        }
+        
     }
 }

@@ -27,7 +27,7 @@ namespace LearningApp
             {
                 MediaSource librarySource = MediaSource.GetAvailableMediaSources().First<MediaSource>();
                 MediaLibrary gallery = new MediaLibrary(librarySource);
-                gallery.SavePicture("", GamePage.ImageData);
+                gallery.SavePicture("Title", GamePage.ImageData);
             }
             catch (Exception)
             {

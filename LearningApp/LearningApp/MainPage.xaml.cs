@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace LearningApp
 {
@@ -54,6 +56,18 @@ namespace LearningApp
             for (int i = 0; i < GamePage.ImageData.Length && i < ands.Length; i++)
             {
                 GamePage.ImageData[i] = (byte)(GamePage.ImageData[i] & ands[i]);
+            }
+
+            //Convert the ImageData into JPEG format
+            Texture2D converter = new Texture2D(SharedGraphicsDeviceManager.Current.GraphicsDevice
+                , GamePage.ImageWidth
+                , GamePage.ImageHeight);
+            converter.SetData<byte>(GamePage.ImageData);
+            System.IO.Stream tempStream = new System.IO.MemoryStream();
+            converter.SaveAsJpeg(tempStream, converter.Height, converter.Width);
+            using (System.IO.BinaryReader reader = new System.IO.BinaryReader(tempStream))
+            {
+                GamePage.ImageData = reader.ReadBytes((int)reader.BaseStream.Length);
             }
 
             NavigationService.Navigate(new Uri("/SendPage.xaml", UriKind.Relative));

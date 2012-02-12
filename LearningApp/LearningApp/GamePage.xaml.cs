@@ -28,6 +28,8 @@ namespace LearningApp
         private List<ImageFile> loadedPictures = new List<ImageFile>();
 
         public static byte[] ImageData;
+        public static int ImageWidth;
+        public static int ImageHeight;
 
         public GamePage()
         {
@@ -65,7 +67,6 @@ namespace LearningApp
                     displayData.Height = collection[i].Height;
                     loadedPictures.Add(displayData);
                 }
-                loadedPictures.AddRange(loadedPictures);
             }
             catch (Exception) { }
         }
@@ -78,7 +79,7 @@ namespace LearningApp
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(SharedGraphicsDeviceManager.Current.GraphicsDevice);
 
-            Kootenay = contentManager.Load<SpriteFont>("Kootenay");
+            //Kootenay = contentManager.Load<SpriteFont>("Kootenay");
             BlankWhiteTexture = new Texture2D(SharedGraphicsDeviceManager.Current.GraphicsDevice, 1, 1);
             BlankWhiteTexture.SetData<Color>( new Color[] { Color.White } );
 
@@ -94,8 +95,10 @@ namespace LearningApp
             timer.Stop();
 
             //Save the image's data to a shared static variable
-            ImageData = new byte[loadedPictures[selectedImage].Picture.Width * loadedPictures[selectedImage].Picture.Height];
+            ImageData = new byte[4 * loadedPictures[selectedImage].Picture.Width * loadedPictures[selectedImage].Picture.Height];
             loadedPictures[selectedImage].Picture.GetData<byte>(ImageData, 0, ImageData.Length);
+            ImageWidth = loadedPictures[selectedImage].Picture.Width;
+            ImageHeight = loadedPictures[selectedImage].Picture.Height;
 
             // Set the sharing mode of the graphics device to turn off XNA rendering
             SharedGraphicsDeviceManager.Current.GraphicsDevice.SetSharingMode(false);
@@ -203,7 +206,9 @@ namespace LearningApp
             //Highlight the selected image
             if (selectedImage >= 0)
             {
-                spriteBatch.Draw(BlankWhiteTexture, loadedPictures[selectedImage].DrawingRegion, new Color(1.0f, 1.0f, 1.0f, 0.2f));
+                spriteBatch.Draw(BlankWhiteTexture
+                    , loadedPictures[selectedImage].DrawingRegion
+                    , Color.White * 0.25f);
             }
             spriteBatch.End();
         }

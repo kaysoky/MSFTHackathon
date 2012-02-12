@@ -38,3 +38,5 @@ c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\L
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningAppLib.dll
 c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\LearningAppLib.pdb
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\Microsoft.Expression.Drawing.dll
+c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningApp\Bin\Debug\Microsoft.Expression.Drawing.xml

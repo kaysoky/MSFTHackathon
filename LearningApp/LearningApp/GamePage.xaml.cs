@@ -67,10 +67,7 @@ namespace LearningApp
                 }
                 loadedPictures.AddRange(loadedPictures);
             }
-            catch (Exception accessDenied)
-            {
-                //Dunno how to write text to phone
-            }
+            catch (Exception) { }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

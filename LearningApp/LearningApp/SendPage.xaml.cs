@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Microsoft.Xna.Framework.Media;
 
 namespace LearningApp
 {
@@ -18,6 +19,21 @@ namespace LearningApp
         public SendPage()
         {
             InitializeComponent();
+        }
+
+        private void share(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MediaSource librarySource = MediaSource.GetAvailableMediaSources().First<MediaSource>();
+                MediaLibrary gallery = new MediaLibrary(librarySource);
+                gallery.SavePicture("", GamePage.ImageData);
+            }
+            catch (Exception)
+            {
+                ExceptionCallout.Content = "Save failed...\nPlease try again";
+                FadeIn.Begin();
+            }
         }
     }
 }

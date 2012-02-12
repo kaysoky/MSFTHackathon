@@ -5,6 +5,7 @@
 	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:edc="clr-namespace:Microsoft.Expression.Controls;assembly=Microsoft.Expression.Drawing"
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
 	x:Class="LearningApp.SendPage"
 	FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -12,12 +13,41 @@
 	Foreground="{StaticResource PhoneForegroundBrush}"
 	Orientation="Portrait"
 	shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.Resources>
+		<Storyboard x:Name="FadeIn">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ExceptionCallout">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<ExponentialEase EasingMode="EaseOut" Exponent="4"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<ExponentialEase EasingMode="EaseOut" Exponent="4"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(CompositeContentShape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="ExceptionCallout">
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF141427"/>
+				<EasingColorKeyFrame KeyTime="0:0:6" Value="Black"/>
+				<EasingColorKeyFrame KeyTime="0:0:7" Value="#FF141427"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(CompositeContentShape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="ExceptionCallout">
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF686AE9"/>
+				<EasingColorKeyFrame KeyTime="0:0:6" Value="#FF3C3D70"/>
+				<EasingColorKeyFrame KeyTime="0:0:7" Value="#FF686AE9"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
 
 	<!--LayoutRoot is the root grid where all page content is placed-->
+    <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+        	<RowDefinition Height="Auto"/>
+        	<RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
@@ -29,6 +59,14 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Button Content="Save to Gallery" Click="share" Height="106" Margin="42,197,50,0" VerticalAlignment="Top"/>
+        	<edc:Callout x:Name="ExceptionCallout" AnchorPoint="0.11,1.549" CalloutStyle="Oval" Content="" FontSize="24" Height="113" Margin="194,62,8,0" Stroke="Black" VerticalAlignment="Top" Opacity="0">
+        		<edc:Callout.Fill>
+        			<RadialGradientBrush>
+        				<GradientStop Color="#FF686AE9" Offset="0"/>
+        				<GradientStop Color="#FF141427" Offset="1"/>
+        			</RadialGradientBrush>
+        		</edc:Callout.Fill>
+        	</edc:Callout>
         </Grid>
     </Grid>
 </phone:PhoneApplicationPage>

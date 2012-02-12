@@ -2,6 +2,7 @@
   <Deployment.Parts>
     <AssemblyPart x:Name="LearningApp" Source="LearningApp.dll" />
     <AssemblyPart x:Name="LearningAppLib" Source="LearningAppLib.dll" />
+    <AssemblyPart x:Name="Microsoft.Expression.Drawing" Source="Microsoft.Expression.Drawing.dll" />
     <AssemblyPart x:Name="Microsoft.Expression.Interactions" Source="Microsoft.Expression.Interactions.dll" />
     <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
   </Deployment.Parts>

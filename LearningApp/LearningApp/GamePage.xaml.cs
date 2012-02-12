@@ -81,8 +81,8 @@ namespace LearningApp
             spriteBatch = new SpriteBatch(SharedGraphicsDeviceManager.Current.GraphicsDevice);
 
             //Kootenay = contentManager.Load<SpriteFont>("Kootenay");
-            //BlankWhiteTexture = new Texture2D(SharedGraphicsDeviceManager.Current.GraphicsDevice, 1, 1);
-            //BlankWhiteTexture.SetData<Color>( new Color[] { Color.White } );
+            BlankWhiteTexture = new Texture2D(SharedGraphicsDeviceManager.Current.GraphicsDevice, 1, 1);
+            BlankWhiteTexture.SetData<Color>( new Color[] { Color.White } );
 
             // Start the timer
             timer.Start();
@@ -210,9 +210,9 @@ namespace LearningApp
             //Highlight the selected image
             if (selectedImage >= 0)
             {
-                //spriteBatch.Draw(BlankWhiteTexture
-                //    , loadedPictures[selectedImage].DrawingRegion
-                //    , Color.White * 0.25f);
+                spriteBatch.Draw(BlankWhiteTexture
+                    , loadedPictures[selectedImage].DrawingRegion
+                    , Color.White * 0.25f);
             }
             spriteBatch.End();
         }

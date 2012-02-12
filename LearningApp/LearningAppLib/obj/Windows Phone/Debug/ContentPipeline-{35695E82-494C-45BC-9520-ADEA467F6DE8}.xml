@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Kootenay.spritefont</Source>
+      <Name>Kootenay</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\bin\Windows Phone\Debug\Content\Kootenay.xnb</Output>
+      <Time>2012-02-11T15:22:56.9124629-08:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{35695E82-494C-45BC-9520-ADEA467F6DE8}</ContentProjectGUID>
@@ -8,15 +17,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\hoagies\documents\visual studio 2010\Projects\LearningApp\LearningApp\LearningAppLibContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Hoagies\Documents\Visual Studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Hoagies\Documents\Visual Studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\obj\Windows Phone\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Hoagies\Documents\Visual Studio 2010\Projects\LearningApp\LearningApp\LearningAppLib\bin\Windows Phone\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLibContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\obj\Windows Phone\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\This Guy Rules\MSFTHackathon\LearningApp\LearningAppLib\bin\Windows Phone\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-02-07T20:39:09.5757441-08:00</Value>
+        <Value>2012-02-11T10:49:34.3342891-08:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

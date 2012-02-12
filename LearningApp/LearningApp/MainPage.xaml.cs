@@ -33,7 +33,7 @@ namespace LearningApp
             //Convert the UploadPage.HiddenData to a bitwise-AND compatible array of bytes
             byte[] ands = new byte[UploadPage.HiddenData.Length * 8];
             int andsCounter = 0;
-            for (int i = 0; i < HiddenData.Length; i++)
+            for (int i = 0; i < UploadPage.HiddenData.Length; i++)
             {
                 int shifty = UploadPage.HiddenData[i];
                 for (int j = 0; j < 8; j++)
@@ -57,6 +57,11 @@ namespace LearningApp
             }
 
             NavigationService.Navigate(new Uri("/SendPage.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

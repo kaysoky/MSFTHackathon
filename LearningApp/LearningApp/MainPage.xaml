@@ -32,7 +32,7 @@
 
             <!--Create a single button to navigate to the second page which is rendered with the XNA Framework-->
             <Button Height="112" Content="Get Medium (XNA)" Click="medium" VerticalAlignment="Top" />
-            <Button Content="Get Data" Margin="0,112,0,0" Height="121" VerticalAlignment="Top">
+            <Button Content="Get Data" Margin="0,112,0,0" Height="121" VerticalAlignment="Top" Click="Button_Click">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <ec:NavigateToPageAction TargetPage="/UploadPage.xaml"/>
